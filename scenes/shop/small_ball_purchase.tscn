@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://cv0e34gtmn4af"]
+
+[ext_resource type="Texture2D" uid="uid://c6n0wljwve60u" path="res://assets/small_pinball.png" id="1_nctox"]
+[ext_resource type="Script" uid="uid://nkr23xgrvglj" path="res://scripts/shop/ball_purchase.gd" id="2_uk24s"]
+[ext_resource type="PackedScene" uid="uid://e041niposd4r" path="res://scenes/balls/small_ball.tscn" id="3_biw5i"]
+
+[node name="small ball purchase" type="TextureRect" unique_id=183120952 node_paths=PackedStringArray("card_frame")]
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("1_nctox")
+script = ExtResource("2_uk24s")
+card_frame = NodePath(".")
+ball_scene = ExtResource("3_biw5i")

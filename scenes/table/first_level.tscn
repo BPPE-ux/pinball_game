@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://dqa4ass6nctcm"]
+
+[ext_resource type="Texture2D" uid="uid://gxj41xjxxlco" path="res://assets/Pinball-Ball.png" id="1_5puvx"]
+
+[node name="First Level" type="Node2D" unique_id=808269800]
+
+[node name="PinballBall" type="Sprite2D" parent="." unique_id=502114727]
+texture = ExtResource("1_5puvx")
+
+[node name="PinballBall2" type="Sprite2D" parent="." unique_id=163737772]
+position = Vector2(0, 432)
+texture = ExtResource("1_5puvx")
+
+[node name="PinballBall3" type="Sprite2D" parent="." unique_id=1518965765]
+position = Vector2(336, 432)
+texture = ExtResource("1_5puvx")
+
+[node name="PinballBall4" type="Sprite2D" parent="." unique_id=493908240]
+position = Vector2(336, 0)
+texture = ExtResource("1_5puvx")

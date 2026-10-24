@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://ccd652iomjp7o"]
+
+[ext_resource type="Texture2D" uid="uid://cypabbdts01ln" path="res://assets/pinball_bomb_ball.png" id="1_s7g4c"]
+[ext_resource type="Script" uid="uid://nkr23xgrvglj" path="res://scripts/shop/ball_purchase.gd" id="2_x0xdt"]
+[ext_resource type="PackedScene" uid="uid://rdxti4r1lgyv" path="res://scenes/balls/bomb_ball.tscn" id="3_aibnp"]
+
+[node name="bomb_ball_purchase" type="TextureRect" unique_id=1220925601 node_paths=PackedStringArray("card_frame")]
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("1_s7g4c")
+script = ExtResource("2_x0xdt")
+card_frame = NodePath(".")
+ball_scene = ExtResource("3_aibnp")

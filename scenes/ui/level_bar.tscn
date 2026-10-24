@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://d1m03qi4mddnl"]
+
+[ext_resource type="Script" uid="uid://bb6mxrhqb1nk5" path="res://scripts/ui/level_bar.gd" id="1_ajfem"]
+[ext_resource type="Script" uid="uid://cdcrlhpx1ujjm" path="res://scripts/ui/level_counter.gd" id="2_t7u84"]
+
+[node name="level bar" type="ProgressBar" unique_id=1892910052]
+offset_right = 201.0
+offset_bottom = 27.0
+show_percentage = false
+script = ExtResource("1_ajfem")
+
+[node name="Label" type="Label" parent="." unique_id=1290278425]
+layout_mode = 0
+offset_left = 74.0
+offset_top = 2.0
+offset_right = 114.0
+offset_bottom = 25.0
+text = "1"
+horizontal_alignment = 1
+script = ExtResource("2_t7u84")

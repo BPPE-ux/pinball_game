@@ -1,0 +1,108 @@
+[gd_scene format=3 uid="uid://bldhs18wmv1rc"]
+
+[ext_resource type="Script" uid="uid://olbp6qughvyf" path="res://scripts/table/flipper.gd" id="1_gyfs4"]
+[ext_resource type="PackedScene" uid="uid://cs4fioobkagj2" path="res://scenes/table/flipper.tscn" id="2_2c62f"]
+[ext_resource type="PackedScene" uid="uid://b6poj2p1nlasc" path="res://scenes/table/bumper.tscn" id="4_d5x1h"]
+[ext_resource type="Script" uid="uid://ca28nsarpoyet" path="res://scripts/table/delete_area.gd" id="5_hq1ik"]
+[ext_resource type="PackedScene" uid="uid://d1m03qi4mddnl" path="res://scenes/ui/level_bar.tscn" id="6_hq1ik"]
+[ext_resource type="Script" uid="uid://bpvlwu8cxgr6i" path="res://scripts/shop/go_to_upgrades.gd" id="7_66tet"]
+[ext_resource type="PackedScene" uid="uid://be453capaljin" path="res://scenes/shop/shop_ui.tscn" id="7_nfk4m"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_g4v7s"]
+size = Vector2(159, 81.64603)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_57qmd"]
+size = Vector2(20, 331)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yf5fn"]
+size = Vector2(215, 85)
+
+[node name="Main_scene" type="Node2D" unique_id=39538787]
+script = ExtResource("1_gyfs4")
+
+[node name="Flipper" parent="." unique_id=571024590 instance=ExtResource("2_2c62f")]
+position = Vector2(79, 268)
+
+[node name="Flipper2" parent="." unique_id=1711947648 instance=ExtResource("2_2c62f")]
+position = Vector2(254, 267)
+scale = Vector2(-1, 1)
+
+[node name="Pinball_machine" type="Node" parent="." unique_id=1452040433 groups=["pinball_machine"]]
+
+[node name="right ramp" type="StaticBody2D" parent="Pinball_machine" unique_id=561205515]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Pinball_machine/right ramp" unique_id=1135738620]
+position = Vector2(-4.9999967, 292.99997)
+rotation = 0.19198622
+scale = Vector2(0.99999994, 0.99999994)
+shape = SubResource("RectangleShape2D_g4v7s")
+
+[node name="roof" type="StaticBody2D" parent="Pinball_machine" unique_id=1576460115]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Pinball_machine/roof" unique_id=1692159259]
+position = Vector2(171, 6)
+rotation = 1.5707964
+shape = SubResource("RectangleShape2D_57qmd")
+
+[node name="right_wall" type="StaticBody2D" parent="Pinball_machine" unique_id=653680888]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Pinball_machine/right_wall" unique_id=954233566]
+position = Vector2(336, 165)
+shape = SubResource("RectangleShape2D_57qmd")
+
+[node name="left_wall" type="StaticBody2D" parent="Pinball_machine" unique_id=1130061740]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Pinball_machine/left_wall" unique_id=1725799616]
+position = Vector2(1, 164)
+shape = SubResource("RectangleShape2D_57qmd")
+
+[node name="left_ramp" type="StaticBody2D" parent="Pinball_machine" unique_id=46837805]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Pinball_machine/left_ramp" unique_id=386290945]
+position = Vector2(336, 292)
+rotation = -0.19198622
+scale = Vector2(0.99999994, 0.99999994)
+shape = SubResource("RectangleShape2D_g4v7s")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=121276605]
+position = Vector2(162, 169)
+limit_left = -8
+limit_top = 2
+limit_right = 347
+limit_bottom = 336
+
+[node name="Bumper" parent="." unique_id=1841176052 instance=ExtResource("4_d5x1h")]
+position = Vector2(162, 119)
+
+[node name="Delete_area" type="Area2D" parent="." unique_id=2025327817]
+script = ExtResource("5_hq1ik")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Delete_area" unique_id=1723803202]
+position = Vector2(164, 365)
+shape = SubResource("RectangleShape2D_yf5fn")
+debug_color = Color(1, 0, 0, 0.41960785)
+
+[node name="Shop UI" parent="." unique_id=1896035931 instance=ExtResource("7_nfk4m")]
+offset_left = 75.0
+offset_top = 4.0
+offset_right = 75.0
+offset_bottom = 4.0
+metadata/_edit_use_anchors_ = true
+
+[node name="level bar" parent="." unique_id=1892910052 instance=ExtResource("6_hq1ik")]
+offset_left = 16.0
+offset_top = 72.0
+offset_right = 217.0
+offset_bottom = 99.0
+metadata/_edit_use_anchors_ = true
+
+[node name="Button" type="Button" parent="." unique_id=1819152760]
+offset_left = 235.0
+offset_top = 71.0
+offset_right = 316.0
+offset_bottom = 102.0
+text = "upgrades"
+script = ExtResource("7_66tet")
+
+[connection signal="body_entered" from="Delete_area" to="Delete_area" method="_on_body_entered"]
+[connection signal="pressed" from="Button" to="Button" method="_on_pressed"]

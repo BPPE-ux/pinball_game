@@ -1,0 +1,45 @@
+[gd_scene format=3 uid="uid://c33nhq5we4pm"]
+
+[ext_resource type="Texture2D" uid="uid://gxj41xjxxlco" path="res://assets/Pinball-Ball.png" id="2_47laq"]
+[ext_resource type="Script" uid="uid://c3ux0jr8xte5o" path="res://scripts/shop/upgrade_button.gd" id="2_n3r5t"]
+[ext_resource type="Script" uid="uid://djo7ly1tkak0i" path="res://scripts/balls/ball.gd" id="3_n3r5t"]
+
+[node name="ball_upgrade" type="Control" unique_id=1519805453]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ball" type="TextureRect" parent="." unique_id=1827116775]
+layout_mode = 0
+offset_left = 11.0
+offset_right = 51.0
+offset_bottom = 40.0
+texture = ExtResource("2_47laq")
+
+[node name="upgrade 1" type="Button" parent="ball" unique_id=1206496090]
+layout_mode = 0
+offset_left = -3.0
+offset_top = 45.0
+offset_right = 49.0
+offset_bottom = 76.0
+text = "upgrade 1"
+script = ExtResource("2_n3r5t")
+ball_script = ExtResource("3_n3r5t")
+upgrade_id = 1
+
+[node name="upgrade 2" type="Button" parent="ball" unique_id=1258904716]
+layout_mode = 0
+offset_left = -3.0
+offset_top = 79.0
+offset_right = 83.0
+offset_bottom = 110.0
+text = "upgrade 2"
+script = ExtResource("2_n3r5t")
+ball_script = ExtResource("3_n3r5t")
+upgrade_id = 2
+
+[connection signal="pressed" from="ball/upgrade 1" to="ball/upgrade 1" method="_on_pressed"]
+[connection signal="pressed" from="ball/upgrade 2" to="ball/upgrade 2" method="_on_pressed"]

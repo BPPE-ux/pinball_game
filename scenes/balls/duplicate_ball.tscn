@@ -1,0 +1,27 @@
+[gd_scene format=3 uid="uid://dsxqch3jtu7jw"]
+
+[ext_resource type="Script" uid="uid://dtxi23jgiyp6q" path="res://scripts/balls/duplicate_ball.gd" id="1_rxnwm"]
+[ext_resource type="Texture2D" uid="uid://cx2mxaltkr4hg" path="res://assets/pinball_duplicate_ball.png" id="2_rxnwm"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_yf5fn"]
+friction = 0.0
+bounce = 0.2
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_g4v7s"]
+radius = 8.0
+
+[node name="duplicate_ball" type="RigidBody2D" unique_id=923922056 groups=["Balls"]]
+physics_material_override = SubResource("PhysicsMaterial_yf5fn")
+lock_rotation = true
+freeze_mode = 1
+contact_monitor = true
+max_contacts_reported = 10
+script = ExtResource("1_rxnwm")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1510328004]
+shape = SubResource("CircleShape2D_g4v7s")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=809532858]
+texture = ExtResource("2_rxnwm")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

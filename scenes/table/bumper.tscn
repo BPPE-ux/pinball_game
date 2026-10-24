@@ -1,0 +1,30 @@
+[gd_scene format=3 uid="uid://b6poj2p1nlasc"]
+
+[ext_resource type="Script" uid="uid://bw2eiii1kgx6q" path="res://scripts/table/bumper.gd" id="1_hrt4a"]
+[ext_resource type="Texture2D" uid="uid://fxlblmuxg7o2" path="res://assets/pinball_bumper.png" id="2_h31vo"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_yf5fn"]
+friction = 0.0
+bounce = 0.5
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_g4v7s"]
+radius = 16.0
+
+[node name="Bumper" type="RigidBody2D" unique_id=663386094]
+physics_material_override = SubResource("PhysicsMaterial_yf5fn")
+gravity_scale = 0.0
+can_sleep = false
+lock_rotation = true
+freeze = true
+freeze_mode = 1
+contact_monitor = true
+max_contacts_reported = 4
+script = ExtResource("1_hrt4a")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1750412241]
+shape = SubResource("CircleShape2D_g4v7s")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=241945374]
+texture = ExtResource("2_h31vo")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

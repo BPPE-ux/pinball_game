@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://dlg47a8kxximh"]
+
+[ext_resource type="Texture2D" uid="uid://cx2mxaltkr4hg" path="res://assets/pinball_duplicate_ball.png" id="1_sju8o"]
+[ext_resource type="Script" uid="uid://nkr23xgrvglj" path="res://scripts/shop/ball_purchase.gd" id="2_pepxl"]
+[ext_resource type="PackedScene" uid="uid://dsxqch3jtu7jw" path="res://scenes/balls/duplicate_ball.tscn" id="3_f34u4"]
+
+[node name="duplicate_ball_purchase" type="TextureRect" unique_id=230381532 node_paths=PackedStringArray("card_frame")]
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("1_sju8o")
+script = ExtResource("2_pepxl")
+card_frame = NodePath(".")
+ball_scene = ExtResource("3_f34u4")

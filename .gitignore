@@ -1,0 +1,7 @@
+# Godot 4+ specific ignores
+.godot/
+/android/
+
+# Builds (exe exceeds GitHub 100 MB limit)
+*.exe
+*.pck

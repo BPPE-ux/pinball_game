@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://b38uubwmj4dj8"]
+
+[ext_resource type="Script" uid="uid://nkr23xgrvglj" path="res://scripts/shop/ball_purchase.gd" id="1_61gb5"]
+[ext_resource type="Texture2D" uid="uid://gxj41xjxxlco" path="res://assets/Pinball-Ball.png" id="1_g0n26"]
+[ext_resource type="PackedScene" uid="uid://c1hr66ymteyw" path="res://scenes/balls/ball.tscn" id="3_61gb5"]
+
+[node name="Ball" type="TextureRect" unique_id=1767379407 node_paths=PackedStringArray("card_frame")]
+anchors_preset = -1
+anchor_right = 0.051000003
+anchor_bottom = 0.048
+offset_right = 1.8949986
+offset_bottom = 8.968
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_g0n26")
+stretch_mode = 5
+script = ExtResource("1_61gb5")
+card_frame = NodePath(".")
+ball_scene = ExtResource("3_61gb5")

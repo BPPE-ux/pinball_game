@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://crrxpkicempgu"]
+
+[ext_resource type="Texture2D" uid="uid://cr34fj6d77fci" path="res://assets/coin_ball.png" id="1_dx6bj"]
+[ext_resource type="Script" uid="uid://nkr23xgrvglj" path="res://scripts/shop/ball_purchase.gd" id="2_itob5"]
+[ext_resource type="PackedScene" uid="uid://cds427ewkb6q4" path="res://scenes/balls/coin_ball.tscn" id="3_8jdgl"]
+
+[node name="coin_ball_purchase" type="TextureRect" unique_id=1937009412 node_paths=PackedStringArray("card_frame")]
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("1_dx6bj")
+script = ExtResource("2_itob5")
+card_frame = NodePath(".")
+ball_scene = ExtResource("3_8jdgl")

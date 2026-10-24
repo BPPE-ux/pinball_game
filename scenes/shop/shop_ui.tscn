@@ -1,0 +1,73 @@
+[gd_scene format=3 uid="uid://be453capaljin"]
+
+[ext_resource type="Texture2D" uid="uid://2pi176kq3ce6" path="res://icon.svg" id="1_fscwk"]
+[ext_resource type="PackedScene" uid="uid://b38uubwmj4dj8" path="res://scenes/shop/ball_purchase.tscn" id="2_l4r40"]
+[ext_resource type="PackedScene" uid="uid://cv0e34gtmn4af" path="res://scenes/shop/small_ball_purchase.tscn" id="3_dxujh"]
+[ext_resource type="PackedScene" uid="uid://dlg47a8kxximh" path="res://scenes/shop/duplicate_ball_purchase.tscn" id="4_du886"]
+[ext_resource type="PackedScene" uid="uid://ccd652iomjp7o" path="res://scenes/shop/bomb_ball_purchase.tscn" id="5_qvybl"]
+[ext_resource type="PackedScene" uid="uid://crrxpkicempgu" path="res://scenes/shop/coin_ball_purchase.tscn" id="6_arfta"]
+
+[node name="Shop UI" type="Control" unique_id=1896035931]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -54.0
+offset_bottom = -240.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="BG" type="TextureRect" parent="." unique_id=1973268959]
+modulate = Color(0, 0, 0.32156864, 1)
+layout_mode = 0
+offset_left = -62.0
+offset_top = 2.0
+offset_right = 228.0
+offset_bottom = 66.0
+texture = ExtResource("1_fscwk")
+expand_mode = 1
+
+[node name="Ball" parent="." unique_id=1767379407 instance=ExtResource("2_l4r40")]
+layout_mode = 0
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = 12.0
+offset_top = 20.0
+offset_right = 44.0
+offset_bottom = 52.0
+grow_horizontal = 1
+grow_vertical = 1
+unlock_level = 1
+
+[node name="small ball purchase" parent="." unique_id=183120952 instance=ExtResource("3_dxujh")]
+layout_mode = 0
+offset_left = 50.0
+offset_top = 28.0
+offset_right = 66.0
+offset_bottom = 44.0
+unlock_level = 1
+
+[node name="duplicate_ball_purchase" parent="." unique_id=230381532 instance=ExtResource("4_du886")]
+layout_mode = 0
+offset_left = 72.0
+offset_top = 20.0
+offset_right = 104.0
+offset_bottom = 52.0
+unlock_level = 1
+
+[node name="bomb_ball_purchase" parent="." unique_id=1220925601 instance=ExtResource("5_qvybl")]
+layout_mode = 0
+offset_left = 110.0
+offset_top = 16.0
+offset_right = 142.0
+offset_bottom = 52.0
+unlock_level = 1
+
+[node name="coin_ball_purchase" parent="." unique_id=1937009412 instance=ExtResource("6_arfta")]
+layout_mode = 0
+offset_left = 148.0
+offset_top = 20.0
+offset_right = 180.0
+offset_bottom = 52.0
+unlock_level = 1

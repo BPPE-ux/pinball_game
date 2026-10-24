@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://e041niposd4r"]
+
+[ext_resource type="Texture2D" uid="uid://c6n0wljwve60u" path="res://assets/small_pinball.png" id="1_3f05c"]
+[ext_resource type="Script" uid="uid://b8y6nf0pvyf6o" path="res://scripts/balls/small_ball.gd" id="1_rusw6"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_yf5fn"]
+friction = 0.0
+bounce = 0.2
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_g4v7s"]
+radius = 4.0
+
+[node name="small_ball" type="RigidBody2D" unique_id=923922056 groups=["Balls"]]
+physics_material_override = SubResource("PhysicsMaterial_yf5fn")
+lock_rotation = true
+freeze_mode = 1
+contact_monitor = true
+max_contacts_reported = 10
+script = ExtResource("1_rusw6")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1510328004]
+shape = SubResource("CircleShape2D_g4v7s")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=809532858]
+texture = ExtResource("1_3f05c")
