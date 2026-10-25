@@ -5,3 +5,5 @@
 # Builds (exe exceeds GitHub 100 MB limit)
 *.exe
 *.pck
+/build/
+*.x86_64
