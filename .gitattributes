@@ -1,2 +1,11 @@
 # Normalize EOL for all files that Git considers text files.
 * text=auto eol=lf
+
+# Keep editor-generated and tooling files out of GitHub's language stats so
+# hand-written GDScript represents the project.
+"@icons picker.html" linguist-generated
+*.tscn linguist-generated
+*.tres linguist-generated
+*.godot linguist-generated
+*.import linguist-generated
+*.cfg linguist-generated
